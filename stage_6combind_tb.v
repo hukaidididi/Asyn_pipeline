@@ -3,7 +3,14 @@ module stage_6combind_tb;
   wire req_out,ack_out;
   reg [2:0] data_in;
   wire [2:0] data_out;
+
   
+always @(req_out)
+  begin 
+    ack_in <= ~ack_in;
+  end
+  
+
   initial begin 
     rst=0;
     #10;
@@ -16,7 +23,8 @@ module stage_6combind_tb;
     ack_in=1;
     data_in=2;
     #10;
-    req_in=1;
+    
+req_in=1;
     ack_in=1;
     data_in=3;
     #10;
