@@ -5,7 +5,7 @@ module stage_6combind_tb;
   wire [2:0] data_out;
 
   
-always @(req_out)
+  always @(req_in)
   begin 
     ack_in <= ~ack_in;
   end
